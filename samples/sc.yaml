@@ -1,18 +1,5 @@
 # ext4 is the default filesystem type in CSI
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: my-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-  storageClassName: "vcd-disk-dev"
-
----
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
@@ -24,3 +11,4 @@ reclaimPolicy: Delete
 parameters:
   storageProfile: "Development2"
   filesystem: "ext4"
+---
