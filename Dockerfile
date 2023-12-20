@@ -1,6 +1,7 @@
 FROM photon:4.0-20230506
 
-RUN tdnf install -y xfsprogs e2fsprogs udev && \
+RUN tdnf -y update && \
+    tdnf install -y xfsprogs e2fsprogs udev && \
     tdnf clean all
 
 WORKDIR /opt/vcloud/bin
